@@ -1,9 +1,8 @@
-# jts.cloud-native.2019.1
-Carlos André Sousa Rodrigues
+# Social Agregator
 
-Tema 10 - Microserviços springboot com Hystrix
+## Microserviços Springboot com Hystrix
 
-4 arquivos se encontram na raíz do projeto, os 3 microserviços: GithubMicroservice, TwitterMicroservice e Tema7, e o docker-compose.yml para orquestração dos containers. Para cada microserviço existe um Dockerfile de configuração do Docker.
+4 arquivos se encontram na raíz do projeto, os 3 microserviços: GithubMicroservice, TwitterMicroservice e Tema7, e o docker-compose.yml para orquestração dos containers. Para cada microserviço existe um Dockerfile de configuração.
 
 Para subir os 3 microserviços, siga os passos a seguir.
 
