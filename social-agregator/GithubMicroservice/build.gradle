@@ -1,0 +1,35 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
+
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.carlsoasrc.jtscloudnative.tema10.githubmicroservice'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+def hystrixVersion = "1.5.12"
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compile group: 'org.eclipse.mylyn.github', name: 'org.eclipse.egit.github.core', version: '2.1.5'
+    compile group: 'com.netflix.hystrix', name: 'hystrix-core', version: hystrixVersion
+    compile group: 'com.netflix.hystrix', name: 'hystrix-metrics-event-stream', version: hystrixVersion
+}
+
+
+
