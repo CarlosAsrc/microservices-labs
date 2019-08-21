@@ -1,0 +1,23 @@
+server: 
+  port: 8092
+  
+secure: 
+  port: 8443
+
+service:
+  name: playlist-service
+  
+host:   
+  name: playlist-service-host
+  
+database:
+  url: jdbc:mysql://localhost:3306/playlist_service
+  user: user
+  password: password
+   
+eureka:
+  apps: http://localhost:8080/eureka/v2/apps
+  vips: http://localhost:8080/eureka/v2/vips
+  healthCheckUrl: http://localhost:${server.port}/healthcheck
+  statusPageUrl: http://localhost:${server.port}/status
+  homePageUrl: http://localhost:${server.port}

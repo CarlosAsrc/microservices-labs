@@ -1,0 +1,21 @@
+server: 
+  port: 8093
+
+secure: 
+  port: 8443
+  
+service:
+   name: app-service
+  
+host:   
+   name: app-service-host
+
+services:
+   playlistUrl: http://localhost:8092
+
+eureka:
+   apps: http://localhost:8080/eureka/v2/apps
+   vips: http://localhost:8080/eureka/v2/vips
+   healthCheckUrl: http://localhost:${server.port}/healthcheck
+   statusPageUrl: http://localhost:${server.port}/status
+   homePageUrl: http://localhost:${server.port}

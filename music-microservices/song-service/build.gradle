@@ -1,0 +1,45 @@
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'songservice'
+    version = '1.0.0-SNAPSHOT'
+}
+
+run {
+    mainClassName = "com.carlosdione.jtscloudnative.temafinal2.songservice.SongServiceApplication"
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+    }
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+def hystrixVersion = "1.5.12"
+def gsonVersion = "2.8.5"
+def mysqlVersion = "8.0.15"
+def feignVersion = "10.2.3"
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compile group: 'com.google.code.gson', name: 'gson', version: gsonVersion
+    compile group: 'mysql', name: 'mysql-connector-java', version: mysqlVersion
+    compile group: 'com.netflix.hystrix', name: 'hystrix-core', version: hystrixVersion
+    compile group: 'com.netflix.hystrix', name: 'hystrix-metrics-event-stream', version: hystrixVersion
+    compile group: 'io.github.openfeign', name: 'feign-core', version: "$feignVersion"
+    compile group: 'io.github.openfeign', name: 'feign-gson', version: "$feignVersion"
+}
